@@ -1,13 +1,14 @@
 <template>
   <div class="pokemon-container">
     <img
-      v-show="showPokemon"
+      v-show="!showPokemon"
       :src="imagenFuente"
       alt="No se visualiza la imagen"
       class="ocultar"
     />
+
     <img
-      v-show="!showPokemon"
+      v-show="showPokemon"
       :src="imagenFuente"
       alt="No se visualiza la imagen"
     />
@@ -17,11 +18,10 @@
 <script>
 export default {
   data() {
-    return{
-      propiedadPrueba:'este texto es de prueba'
+    return {
+      propiedadPrueba: "Este texto es de prueba",
     };
   },
-
   props: {
     pokemonId: {
       type: Number,
@@ -41,13 +41,12 @@ export default {
       );*/
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`;
     },
-
   },
-  methods:{
-    metodoPrueba(){
-      console.log('metodo ejecutado desde el padre');
-    }
-  }
+  methods: {
+    metodoPrueba() {
+      console.log("Metodo ejecutado desde el padre");
+    },
+  },
 };
 </script>
 
